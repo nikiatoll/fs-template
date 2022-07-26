@@ -1,6 +1,6 @@
-const express = require(express)
+const express = require('express')
 const app = express()
-const cors = require(cors)
+const cors = require('cors')
 const MongoClient = require('mongodb').MongoClient
 require('dotenv').config()
 
@@ -15,3 +15,7 @@ MongoClient.connect(dbConnectionString)
         db = client.db(dbName)
         collection = db.collection('quotes')
     })
+
+app.listen(process.env.PORT || PORT, ()=> {
+    console.log(`Server is running on port`)
+})
